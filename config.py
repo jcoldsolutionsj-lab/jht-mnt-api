@@ -1,9 +1,23 @@
+import os
+from dotenv import load_dotenv
+
+# Cargar variables desde .env
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+SECRET_KEY = os.getenv("SECRET_KEY")
+ALGORITHM = os.getenv("ALGORITHM")
+ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30))
+
+
+""""
+
 DATABASE_URL = "postgresql://db_jht_q05l_user:wKpJM7Ydjue3L0r37Cb2DCOKzpC597bI@dpg-d8pn72jtqb8s738bl1d0-a.virginia-postgres.render.com/db_tracking"
 SECRET_KEY = "clave_super_secreta"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
-""""
+
 ---- LOCAL
 
 DATABASE_URL = "postgresql://db_jht_q05l_user:wKpJM7Ydjue3L0r37Cb2DCOKzpC597bI@dpg-d8pn72jtqb8s738bl1d0-a.virginia-postgres.render.com/db_tracking"
